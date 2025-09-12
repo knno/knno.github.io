@@ -1,0 +1,56 @@
+<!DOCTYPE HTML><html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Coming Soon</title>
+  <link href="assets/css/bootstrap.css" rel="stylesheet">
+  <link href="assets/css/km.css" rel="stylesheet">
+</head>
+<body class="d-flex vh-100 text-center">
+  <div class="container d-flex align-items-center">
+    <div class="row w-100">
+      <!-- Left: main content -->
+      <div class="col-lg-7 d-flex align-items-center justify-content-center">
+        <main style="max-width: 500px;">
+          <h1 class="mb-3">We’re launching soon</h1>
+          <p class="lead mb-4">Sign up to get notified when we go live.</p>
+          <!-- countdown -->
+          <div class="card mb-4 p-2">
+          <div id="countdown" class="card-header fs-2"></div>
+          </div>
+          <!-- subscribe form -->
+          <form class="row g-2 justify-content-center" onsubmit="return onSubscribe(event)" method="POST" action="http://localhost:5000/coming-soon-subscribe">
+            <div class="row">
+              <input id="email" name="email" class="form-control" type="email" placeholder="Your email" required>
+            </div>
+            <div class="row">
+              <button type="submit" class="btn btn-primary align-middle align-center mx-auto w-100">Notify me</button>
+            </div>
+            <div class="row w-100">
+              <div id="indicator-heart" class="align-middle align-center mx-auto"><span class="d-inline">❤</span></div>
+            </div>
+            <div class="my-3">
+                <div class="h-captcha my-3" data-sitekey="f14ce11e-8afe-48d2-b9f6-ff341c2ea42c"></div>
+            </div>
+          </form>
+          <footer class="mt-5 text-muted small">&copy; <span id="current-year"></span> Kenan Masri - All Rights Reserved</footer>
+        </main>
+      </div>
+      <!-- Right: visual card -->
+      <div class="col-lg-5 d-none d-lg-flex align-items-center justify-content-center py-5">
+        <div class="card shadow-lg" style="width: 100%; max-width: 250px;">
+            <div class="card-header py-5 px-4 bg-pat-1">
+          <img src="assets/img/kenanmasri.png" class="card-img-top" alt="Visual">
+          </div>
+          <div class="card-body bg-gradient-1 p-4">
+            <h5 class="card-title">Exciting things ahead!</h5>
+            <p class="card-text">Stay tuned for our launch. Big updates are on the way.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+  <script src="assets/js/main.js">
+  </script>
+</body>
+</html>

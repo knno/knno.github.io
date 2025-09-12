@@ -1,0 +1,9 @@
+__local/
+venv/
+env/
+
+dump/
+
+pa/
+
+.env
