@@ -37,6 +37,7 @@ setInterval(updateCountdown, 1000);
 //form stuffs
 function resetForm() {
     this.btn.disabled=false; this.btn.innerHTML='Notify me'; this.heart.classList.remove("beat");
+    hcaptcha.reset();
 };
 function onSubscribe(event){
     const form = event.target;
@@ -69,9 +70,12 @@ function onSubscribe(event){
             heart.classList.add("beat"); //happy:D
             setTimeout(resetForm.bind({btn: btn, heart:heart}), 3500);
             form.reset();
-            hcaptcha.reset(); // reset CAPTCHA widget
         } else {
-            btn.disabled = true; btn.innerHTML = '<span style="color: red;">Oops! Try again later.</span>';
+            if (data.error == "Email already subscribed") {
+                btn.disabled = true; btn.innerHTML = '<span style="color: green;">Already in list!</span>';
+            } else {
+                btn.disabled = true; btn.innerHTML = '<span style="color: red;">Oops! Try again later.</span>';
+            }
             setTimeout(resetForm.bind({btn: btn, heart:heart}), 3500);
             console.error("Submission result error:", data.error);
         }
