@@ -30,18 +30,33 @@ document.addEventListener("DOMContentLoaded", async () => {
     // Priority 3: Pathname (e.g., /post-slug)
     // ----------------------------------------------------
     const params = new URLSearchParams(window.location.search);
-    let path = params.get('post') || window.location.hash.replace(/^#\/?/, '');
+    let path = params.get('post');
     
     if (!path) {
-        path = window.location.pathname.replace(/^\/|\/$/g, '');
-        // Ignore "index.html" if running locally without a clean URL server
-        if (path.endsWith('index.html')) {
-            path = path.replace(/\/?index\.html$/, '');
+        // Fallback to hash routing (remove leading # and /)
+        if (window.location.hash && window.location.hash.length > 1) {
+            path = window.location.hash.replace(/^#\/?/, '');
+        } else {
+            // Fallback to standard pathname
+            path = window.location.pathname;
         }
     }
+
+    // 1. Remove "index.html" (helps with local testing)
+    path = path.replace(/index\.html$/, '');
     
-    // Clean up any remaining leading/trailing slashes
-    path = path.replace(/^\/|\/$/g, '');
+    // 2. Strip any dangling query params or hash fragments from the string
+    path = path.split('?')[0].split('#')[0];
+    
+    // 3. Strip ALL leading and ALL trailing slashes (fixes "slug/" or "slug//")
+    path = path.replace(/^\/+|\/+$/g, '');
+
+    // 4. Decode URI components just in case (e.g., %20 to space)
+    try {
+        path = decodeURIComponent(path);
+    } catch (e) {
+        console.warn("Could not decode path string.");
+    }
 
     const container = document.getElementById('markdown-container');
 
