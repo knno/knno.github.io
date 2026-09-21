@@ -6,21 +6,33 @@
   <title>Loading Post...</title>
   <link href="./assets/css/bootstrap.css" rel="stylesheet">
   <link href="./assets/css/km.css" rel="stylesheet">
-  <link rel="stylesheet" href="./assets/vendor/highlight/styles/github.min.css">
+  <link href="./assets/vendor/highlight/styles/github.min.css" rel="stylesheet">
 </head>
-<body class="d-flex vh-100 text-center">
-  <div class="container d-flex align-items-center">
-    <div class="row w-100">
-      <!-- Left: main content -->
-      <div class="col-lg-12 d-flex align-items-center justify-content-center">
-        <main class="w-100 text-start" style="max-width: 800px; margin: 0 auto;">
-          
-          <!-- Markdown gets injected here -->
-          <div id="markdown-container">
-            <h1 class="mb-3">Loading...</h1>
+<body class="bg-light"> <!-- Removed vh-100 and centering to allow normal scrolling -->
+  
+  <div class="container py-5">
+    <div class="row w-100 mx-auto">
+      <!-- Left Sidebar (Side Nav) -->
+      <div class="col-lg-3 col-md-4 mb-4">
+        <!-- sticky-top keeps the nav visible while scrolling -->
+        <nav class="card shadow-sm border-0 sticky-top" style="top: 2rem;">
+          <div class="card-body">
+            <a href="/" class="text-decoration-none text-dark fw-bold d-block mb-3">&larr; Home</a>
+            <h5 class="card-title fs-6 text-uppercase text-muted mb-3">On this page</h5>
+            <!-- JavaScript will inject the Table of Contents here -->
+            <div id="toc-container"></div>
           </div>
-
-          <footer class="mt-5 text-muted small text-center">
+        </nav>
+      </div>
+      <!-- Right: Main content -->
+      <div class="col-lg-9 col-md-8">
+        <main class="w-100">
+          <div class="card shadow-sm border-0 mb-4">
+            <div class="card-body p-4 p-md-5" id="markdown-container">
+              <h1 class="mb-3">Loading...</h1>
+            </div>
+          </div>
+          <footer class="text-muted small text-center">
             &copy; <span id="current-year"></span> Kenan Masri - All Rights Reserved
           </footer>
         </main>

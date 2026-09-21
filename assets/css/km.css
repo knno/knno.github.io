@@ -24,7 +24,7 @@
   --bs-gray-800: #343a40;
   --bs-gray-900: #212529;
   --bs-primary: rgb(18, 18, 20);
-  --bs-secondary: rgb(80, 105, 126);
+  --bs-secondary: rgb(24, 58, 86);
   --bs-success: #198754;
   --bs-info: #0dcaf0;
   --bs-warning: #ffc107;
@@ -39,7 +39,7 @@
   --bs-white: #fff;
   --bs-black: #000;
   --bs-primary-rgb: 18, 18, 20;
-  --bs-secondary-rgb: 80, 105, 126;
+  --bs-secondary-rgb: 24, 58, 86;
   --bs-success-rgb: 25, 135, 84;
   --bs-info-rgb: 13, 202, 240;
   --bs-warning-rgb: 255, 193, 7;
@@ -79,13 +79,13 @@
   --bs-dark-border-subtle: #adb5bd;
   --bs-white-rgb: 255, 255, 255;
   --bs-black-rgb: 0, 0, 0;
-  --bs-font-sans-serif: "Open Sans", sans-serif;
+  --bs-font-sans-serif: "Segoe UI", Roboto, "Helvetica Neue", "Open sans", sans-serif;
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --bs-body-font-family: var(--bs-font-sans-serif);
-  --bs-body-font-size: 0.94rem;
+  --bs-body-font-size: 0.835rem;
   --bs-body-font-weight: 400;
-  --bs-body-line-height: 1.5;
+  --bs-body-line-height: 1.25;
   --bs-body-color: #000;
   --bs-body-color-rgb: 0, 0, 0;
   --bs-body-bg: #f8f9fa;
@@ -133,6 +133,142 @@
   --bs-form-invalid-color: #dc3545;
   --bs-form-invalid-border-color: #dc3545;
 }
+
+
+:root[data-bs-theme=dark], [data-bs-theme=dark] {
+  --bs-blue: #0d6efd;
+  --bs-indigo: #6610f2;
+  --bs-purple: #6f42c1;
+  --bs-pink: #d63384;
+  --bs-red: #dc3545;
+  --bs-orange: #fd7e14;
+  --bs-yellow: #ffc107;
+  --bs-green: #198754;
+  --bs-teal: #20c997;
+  --bs-cyan: #0dcaf0;
+  --bs-black: #000;
+  --bs-white: #fff;
+  --bs-gray: #6c757d;
+  --bs-gray-dark: #343a40;
+  --bs-gray-100: #f8f9fa;
+  --bs-gray-200: #e9ecef;
+  --bs-gray-300: #dee2e6;
+  --bs-gray-400: #ced4da;
+  --bs-gray-500: #adb5bd;
+  --bs-gray-600: #6c757d;
+  --bs-gray-700: #495057;
+  --bs-gray-800: #343a40;
+  --bs-gray-900: #212529;
+  --bs-primary: rgb(18, 18, 20);
+  --bs-secondary: rgb(113, 156, 191);
+  --bs-success: #198754;
+  --bs-info: #0dcaf0;
+  --bs-warning: #ffc107;
+  --bs-danger: #dc3545;
+  --bs-light: #adb5bd;
+  --bs-dark: #343a40;
+  --bs-tertiary: rgb(68, 116, 204);
+  --bs-theme-white: #000;
+  --bs-theme-black: #fff;
+  --bs-theme-dark: #adb5bd;
+  --bs-theme-light: #343a40;
+  --bs-white: #fff;
+  --bs-black: #000;
+  --bs-primary-rgb: 18, 18, 20;
+  --bs-secondary-rgb: 113, 156, 191;
+  --bs-success-rgb: 25, 135, 84;
+  --bs-info-rgb: 13, 202, 240;
+  --bs-warning-rgb: 255, 193, 7;
+  --bs-danger-rgb: 220, 53, 69;
+  --bs-light-rgb: 173, 181, 189;
+  --bs-dark-rgb: 52, 58, 64;
+  --bs-tertiary-rgb: 68, 116, 204;
+  --bs-theme-white-rgb: 0, 0, 0;
+  --bs-theme-black-rgb: 255, 255, 255;
+  --bs-theme-dark-rgb: 173, 181, 189;
+  --bs-theme-light-rgb: 52, 58, 64;
+  --bs-white-rgb: 255, 255, 255;
+  --bs-black-rgb: 0, 0, 0;
+  --bs-primary-text-emphasis: rgb(7.2, 7.2, 8);
+  --bs-secondary-text-emphasis: rgb(32, 42, 50.4);
+  --bs-success-text-emphasis: rgb(10, 54, 33.6);
+  --bs-info-text-emphasis: rgb(5.2, 80.8, 96);
+  --bs-warning-text-emphasis: rgb(102, 77.2, 2.8);
+  --bs-danger-text-emphasis: rgb(88, 21.2, 27.6);
+  --bs-light-text-emphasis: #495057;
+  --bs-dark-text-emphasis: #495057;
+  --bs-primary-bg-subtle: rgb(207.6, 207.6, 208);
+  --bs-secondary-bg-subtle: rgb(220, 225, 229.2);
+  --bs-success-bg-subtle: rgb(209, 231, 220.8);
+  --bs-info-bg-subtle: rgb(206.6, 244.4, 252);
+  --bs-warning-bg-subtle: rgb(255, 242.6, 205.4);
+  --bs-danger-bg-subtle: rgb(248, 214.6, 217.8);
+  --bs-light-bg-subtle: rgb(251.5, 252, 252.5);
+  --bs-dark-bg-subtle: #ced4da;
+  --bs-primary-border-subtle: rgb(160.2, 160.2, 161);
+  --bs-secondary-border-subtle: rgb(185, 195, 203.4);
+  --bs-success-border-subtle: rgb(163, 207, 186.6);
+  --bs-info-border-subtle: rgb(158.2, 233.8, 249);
+  --bs-warning-border-subtle: rgb(255, 230.2, 155.8);
+  --bs-danger-border-subtle: rgb(241, 174.2, 180.6);
+  --bs-light-border-subtle: #e9ecef;
+  --bs-dark-border-subtle: #adb5bd;
+  --bs-white-rgb: 255, 255, 255;
+  --bs-black-rgb: 0, 0, 0;
+  --bs-font-sans-serif: "Segoe UI", Roboto, "Helvetica Neue", "Open sans", sans-serif;
+  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+  --bs-body-font-family: var(--bs-font-sans-serif);
+  --bs-body-font-size: 0.835rem;
+  --bs-body-font-weight: 400;
+  --bs-body-line-height: 1.25;
+  --bs-body-color: #fff;
+  --bs-body-color-rgb: 255, 255, 255;
+  --bs-body-bg: #000000;
+  --bs-body-bg-rgb: 9, 9, 9;
+  --bs-emphasis-color: #fff;
+  --bs-emphasis-color-rgb: 255, 255, 255;
+  --bs-secondary-color: rgba(255, 255, 255, 0.75);
+  --bs-secondary-color-rgb: 255, 255, 255;
+  --bs-secondary-bg: #e9ecef;
+  --bs-secondary-bg-rgb: 233, 236, 239;
+  --bs-tertiary-color: rgba(255, 255, 255, 0.5);
+  --bs-tertiary-color-rgb: 255, 255, 255;
+  --bs-tertiary-bg: #f8f9fa;
+  --bs-tertiary-bg-rgb: 248, 249, 250;
+  --bs-heading-color: inherit;
+  --bs-link-color: rgb(131.4466019417, 155.9611650485, 176.5533980583);
+  --bs-link-color-rgb: 131, 156, 177;
+  --bs-link-decoration: underline;
+  --bs-link-hover-color: rgb(178.2378640777, 193.4684466019, 206.2621359223);
+  --bs-link-hover-color-rgb: 178, 193, 206;
+  --bs-code-color: #d63384;
+  --bs-highlight-color: #fff;
+  --bs-highlight-bg: rgb(255, 242.6, 205.4);
+  --bs-border-width: 1px;
+  --bs-border-style: solid;
+  --bs-border-color: #dee2e6;
+  --bs-border-color-translucent: rgba(0, 0, 0, 0.175);
+  --bs-border-radius: 0px;
+  --bs-border-radius-sm: 0px;
+  --bs-border-radius-lg: 0px;
+  --bs-border-radius-xl: 1rem;
+  --bs-border-radius-xxl: 2rem;
+  --bs-border-radius-2xl: var(--bs-border-radius-xxl);
+  --bs-border-radius-pill: 50rem;
+  --bs-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  --bs-box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  --bs-box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+  --bs-box-shadow-inset: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+  --bs-focus-ring-width: 0.25rem;
+  --bs-focus-ring-opacity: 0.25;
+  --bs-focus-ring-color: rgba(18, 18, 20, 0.25);
+  --bs-form-valid-color: #198754;
+  --bs-form-valid-border-color: #198754;
+  --bs-form-invalid-color: #dc3545;
+  --bs-form-invalid-border-color: #dc3545;
+}
+
 
 
 .btn-primary {
@@ -289,142 +425,6 @@
 }
 
 
-:root[data-bs-theme=dark], [data-bs-theme=dark] {
-  --bs-blue: #0d6efd;
-  --bs-indigo: #6610f2;
-  --bs-purple: #6f42c1;
-  --bs-pink: #d63384;
-  --bs-red: #dc3545;
-  --bs-orange: #fd7e14;
-  --bs-yellow: #ffc107;
-  --bs-green: #198754;
-  --bs-teal: #20c997;
-  --bs-cyan: #0dcaf0;
-  --bs-black: #000;
-  --bs-white: #fff;
-  --bs-gray: #6c757d;
-  --bs-gray-dark: #343a40;
-  --bs-gray-100: #f8f9fa;
-  --bs-gray-200: #e9ecef;
-  --bs-gray-300: #dee2e6;
-  --bs-gray-400: #ced4da;
-  --bs-gray-500: #adb5bd;
-  --bs-gray-600: #6c757d;
-  --bs-gray-700: #495057;
-  --bs-gray-800: #343a40;
-  --bs-gray-900: #212529;
-  --bs-primary: rgb(18, 18, 20);
-  --bs-secondary: rgb(80, 105, 126);
-  --bs-success: #198754;
-  --bs-info: #0dcaf0;
-  --bs-warning: #ffc107;
-  --bs-danger: #dc3545;
-  --bs-light: #adb5bd;
-  --bs-dark: #343a40;
-  --bs-tertiary: rgb(68, 116, 204);
-  --bs-theme-white: #000;
-  --bs-theme-black: #fff;
-  --bs-theme-dark: #adb5bd;
-  --bs-theme-light: #343a40;
-  --bs-white: #fff;
-  --bs-black: #000;
-  --bs-primary-rgb: 18, 18, 20;
-  --bs-secondary-rgb: 80, 105, 126;
-  --bs-success-rgb: 25, 135, 84;
-  --bs-info-rgb: 13, 202, 240;
-  --bs-warning-rgb: 255, 193, 7;
-  --bs-danger-rgb: 220, 53, 69;
-  --bs-light-rgb: 173, 181, 189;
-  --bs-dark-rgb: 52, 58, 64;
-  --bs-tertiary-rgb: 68, 116, 204;
-  --bs-theme-white-rgb: 0, 0, 0;
-  --bs-theme-black-rgb: 255, 255, 255;
-  --bs-theme-dark-rgb: 173, 181, 189;
-  --bs-theme-light-rgb: 52, 58, 64;
-  --bs-white-rgb: 255, 255, 255;
-  --bs-black-rgb: 0, 0, 0;
-  --bs-primary-text-emphasis: rgb(7.2, 7.2, 8);
-  --bs-secondary-text-emphasis: rgb(32, 42, 50.4);
-  --bs-success-text-emphasis: rgb(10, 54, 33.6);
-  --bs-info-text-emphasis: rgb(5.2, 80.8, 96);
-  --bs-warning-text-emphasis: rgb(102, 77.2, 2.8);
-  --bs-danger-text-emphasis: rgb(88, 21.2, 27.6);
-  --bs-light-text-emphasis: #495057;
-  --bs-dark-text-emphasis: #495057;
-  --bs-primary-bg-subtle: rgb(207.6, 207.6, 208);
-  --bs-secondary-bg-subtle: rgb(220, 225, 229.2);
-  --bs-success-bg-subtle: rgb(209, 231, 220.8);
-  --bs-info-bg-subtle: rgb(206.6, 244.4, 252);
-  --bs-warning-bg-subtle: rgb(255, 242.6, 205.4);
-  --bs-danger-bg-subtle: rgb(248, 214.6, 217.8);
-  --bs-light-bg-subtle: rgb(251.5, 252, 252.5);
-  --bs-dark-bg-subtle: #ced4da;
-  --bs-primary-border-subtle: rgb(160.2, 160.2, 161);
-  --bs-secondary-border-subtle: rgb(185, 195, 203.4);
-  --bs-success-border-subtle: rgb(163, 207, 186.6);
-  --bs-info-border-subtle: rgb(158.2, 233.8, 249);
-  --bs-warning-border-subtle: rgb(255, 230.2, 155.8);
-  --bs-danger-border-subtle: rgb(241, 174.2, 180.6);
-  --bs-light-border-subtle: #e9ecef;
-  --bs-dark-border-subtle: #adb5bd;
-  --bs-white-rgb: 255, 255, 255;
-  --bs-black-rgb: 0, 0, 0;
-  --bs-font-sans-serif: "Open Sans", sans-serif;
-  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-  --bs-body-font-family: var(--bs-font-sans-serif);
-  --bs-body-font-size: 0.94rem;
-  --bs-body-font-weight: 400;
-  --bs-body-line-height: 1.5;
-  --bs-body-color: #fff;
-  --bs-body-color-rgb: 255, 255, 255;
-  --bs-body-bg: #000000;
-  --bs-body-bg-rgb: 9, 9, 9;
-  --bs-emphasis-color: #fff;
-  --bs-emphasis-color-rgb: 255, 255, 255;
-  --bs-secondary-color: rgba(255, 255, 255, 0.75);
-  --bs-secondary-color-rgb: 255, 255, 255;
-  --bs-secondary-bg: #e9ecef;
-  --bs-secondary-bg-rgb: 233, 236, 239;
-  --bs-tertiary-color: rgba(255, 255, 255, 0.5);
-  --bs-tertiary-color-rgb: 255, 255, 255;
-  --bs-tertiary-bg: #f8f9fa;
-  --bs-tertiary-bg-rgb: 248, 249, 250;
-  --bs-heading-color: inherit;
-  --bs-link-color: rgb(131.4466019417, 155.9611650485, 176.5533980583);
-  --bs-link-color-rgb: 131, 156, 177;
-  --bs-link-decoration: underline;
-  --bs-link-hover-color: rgb(178.2378640777, 193.4684466019, 206.2621359223);
-  --bs-link-hover-color-rgb: 178, 193, 206;
-  --bs-code-color: #d63384;
-  --bs-highlight-color: #fff;
-  --bs-highlight-bg: rgb(255, 242.6, 205.4);
-  --bs-border-width: 1px;
-  --bs-border-style: solid;
-  --bs-border-color: #dee2e6;
-  --bs-border-color-translucent: rgba(0, 0, 0, 0.175);
-  --bs-border-radius: 0px;
-  --bs-border-radius-sm: 0px;
-  --bs-border-radius-lg: 0px;
-  --bs-border-radius-xl: 1rem;
-  --bs-border-radius-xxl: 2rem;
-  --bs-border-radius-2xl: var(--bs-border-radius-xxl);
-  --bs-border-radius-pill: 50rem;
-  --bs-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  --bs-box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-  --bs-box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
-  --bs-box-shadow-inset: inset 0 1px 2px rgba(0, 0, 0, 0.075);
-  --bs-focus-ring-width: 0.25rem;
-  --bs-focus-ring-opacity: 0.25;
-  --bs-focus-ring-color: rgba(18, 18, 20, 0.25);
-  --bs-form-valid-color: #198754;
-  --bs-form-valid-border-color: #198754;
-  --bs-form-invalid-color: #dc3545;
-  --bs-form-invalid-border-color: #dc3545;
-}
-
-
-
 body {
     background-image: url("../img/bghaze.png");
     background-size: cover;
@@ -499,4 +499,164 @@ body {
 #indicator-heart.beat {
     color: #ff4868;
     animation: heart-beat 1.5s infinite;
+}
+
+/* Base Typography & Spacing */
+#markdown-container {
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", "Open sans", sans-serif;
+  font-size: 1.1rem;      /* Slightly larger for readability */
+  line-height: 1.3;       /* Ample breathing room between lines */
+  color: var(--bs-body-color);
+}
+
+/* Headings */
+#markdown-container h1,
+#markdown-container h2,
+#markdown-container h3,
+#markdown-container h4 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--bs-heading-color);
+}
+
+#markdown-container h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+/* Subtle underline for H2 to separate sections */
+#markdown-container h2 {
+  font-size: 1.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--bs-border-color-translucent);
+}
+
+#markdown-container h3 { font-size: 1.4rem; }
+#markdown-container h4 { font-size: 1.2rem; }
+
+/* Paragraphs and Lists */
+#markdown-container p,
+#markdown-container ul,
+#markdown-container ol {
+  margin-bottom: 1.5rem;
+}
+
+#markdown-container li {
+  margin-bottom: 0.5rem;
+}
+
+/* Clean, understated blockquotes */
+#markdown-container blockquote {
+  margin: 2rem 0;
+  padding: 0.75rem 0 0.75rem 1.5rem;
+  border-left: 3px solid var(--bs-border-color); /* Subtle line */
+  color: var(--bs-secondary-color);
+  font-style: italic;
+}
+
+/* Images - responsive with soft corners */
+#markdown-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin: 2rem 0;
+  display: block;
+}
+
+/* Links - minimalist hover effect */
+#markdown-container a {
+  color: var(--bs-link-color);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+#markdown-container a:hover {
+  border-bottom-color: var(--bs-link-hover-color);
+}
+
+/* Subtle inline code (doesn't target hljs code blocks) */
+#markdown-container code:not(.hljs) {
+  padding: 0.2em 0.4em;
+  font-size: 0.675em;
+  color: var(--bs-body-color);
+  background-color: var(--bs-tertiary-bg);
+  border-radius: 4px;
+}
+
+/* Pre-formatted Code Blocks (Highlight.js wrapper) */
+#markdown-container pre {
+  margin: 2rem 0;
+  border-radius: 8px;
+  border: 1px solid var(--bs-border-color-translucent);
+  background-color: var(--bs-tertiary-bg); /* Adapts to dark/light mode */
+}
+
+#markdown-container pre code.hljs {
+  background: transparent; /* Let the pre background show through */
+  padding: 1.25rem;
+}
+
+#markdown-container table {
+  /* Force table to scroll horizontally if wider than the container */
+  display: block; 
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  
+  /* Bootstrap Theme Variables */
+  --bs-table-color-type: initial;
+  --bs-table-bg-type: initial;
+  --bs-table-color-state: initial;
+  --bs-table-bg-state: initial;
+  --bs-table-color: rgba(var(--bs-emphasis-color-rgb), 0.9);
+  --bs-table-bg: var(--bs-body-bg);
+  --bs-table-border-color: var(--bs-border-color);
+  --bs-table-accent-bg: transparent;
+  --bs-table-striped-color: rgba(var(--bs-emphasis-color-rgb), 0.9);
+  --bs-table-striped-bg: rgba(var(--bs-emphasis-color-rgb), 0.05);
+  --bs-table-active-color: var(--bs-emphasis-color);
+  --bs-table-active-bg: rgba(var(--bs-emphasis-color-rgb), 0.1);
+  --bs-table-hover-color: var(--bs-emphasis-color);
+  --bs-table-hover-bg: rgba(var(--bs-emphasis-color-rgb), 0.075);
+}
+
+/* Ensure cell content doesn't aggressively wrap if you want a wider table */
+#markdown-container table th,
+#markdown-container table td {
+  white-space: nowrap; 
+}
+
+/* Subdue table headers for a minimal look */
+#markdown-container table th {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  color: var(--bs-secondary-color);
+  padding-bottom: 1rem;
+}
+
+#markdown-container table.table-bordered {
+  border: var(--bs-gray-800);
+}
+
+#markdown-container table td,
+#markdown-container table th {
+  transition: background-color 0.15s ease-in-out;
+}
+
+/* Highlight ONLY the specific cell being hovered */
+#markdown-container table td:hover,
+#markdown-container table th:hover {
+  --bs-table-bg-state: var(--bs-table-active-bg) !important;
+  cursor: default;
 }
