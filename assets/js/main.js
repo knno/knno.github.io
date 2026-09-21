@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             path = window.location.hash.replace(/^#\/?/, '');
         } else {
             // Fallback to standard pathname
-            path = window.location.pathname;
+            path = window.location.pathname.replace(/(^\/+)|(\/+$)|(\/+[\?\#\\\/].*)/g, '');
         }
     }
 
