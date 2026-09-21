@@ -35,8 +35,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // Define the file paths to try based on your priority
     const endpoints = [
-        `/blog/src/${path}.md`,
-        `/blog/src/${path}/post.md`
+        `/blog/posts/${path}.md`,
+        `/blog/posts/${path}/post.md`
     ];
 
     let markdownContent = null;
