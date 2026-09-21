@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     path = path.split('?')[0].split('#')[0];
     
     // 3. Strip ALL leading and ALL trailing slashes (fixes "slug/" or "slug//")
-    path = path.replace(/^\/+|\/+$/g, '');
+    path = path.replace(/(^\/+)|(\/+$)|(\/+[\?\#\\\/].*)/g, '');
 
     // 4. Decode URI components just in case (e.g., %20 to space)
     try {
