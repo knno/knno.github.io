@@ -1,89 +1,71 @@
-// year
-document.getElementById('current-year').textContent = new Date().getFullYear();
-// auto theme detection
-function applyTheme() {
+// @desc auto theme detection
+function applyThemeAuto() {
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
     document.body.setAttribute("data-bs-theme", "dark");
     } else {
     document.body.setAttribute("data-bs-theme", "light");
     }
 }
-applyTheme();
-window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", applyTheme);
-// countdown timer
-const launchDate = new Date("2026-03-04T23:59:59").getTime();
-const countdownEl = document.getElementById("countdown");
-function updateCountdown() {
-    const now = new Date().getTime();
-    const distance = launchDate - now;
 
-    if (distance <= 0) {
-    countdownEl.textContent = "We are live!";
-    return;
+document.addEventListener("DOMContentLoaded", async () => {
+    // Set current year
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+    applyThemeAuto();
+    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", applyThemeAuto);
+
+    // Extract the slug from the URL (e.g., "post-slug" from "/post-slug" or "/post-slug/")
+    const path = window.location.pathname.replace(/^\/|\/$/g, '');
+    const container = document.getElementById('markdown-container');
+
+    if (!path) {
+        container.innerHTML = '<h1 class="mb-3">Home</h1><p class="lead mb-4">Welcome to the root page.</p>';
+        document.title = "Home";
+        return;
     }
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    countdownEl.innerHTML = `
-    <span class="fw-bold">${days}d</span>
-    <span class="fw-bold">${hours}h</span>
-    <span class="fw-bold">${minutes}m</span>
-    <span class="fw-bold">${seconds}s</span>
-    `;
-}
-updateCountdown();
-setInterval(updateCountdown, 1000);
-//form stuffs
-function resetForm() {
-    this.btn.disabled=false; this.btn.innerHTML='Notify me'; this.heart.classList.remove("beat");
-    hcaptcha.reset();
-};
-function onSubscribe(event){
-    const form = event.target;
-    event.preventDefault();
-    const email = document.getElementById('email').value.trim();
-    if (!email) return false;
-    const btn = event.target.querySelector('button');
-    btn.disabled = true; btn.innerHTML = '...';
-    const heart = document.getElementById('indicator-heart');
-    const token = hcaptcha.getResponse();
-    if (!token) {
-        btn.disabled = true; btn.innerHTML = '<span style="color: red;">Captcha failed! Try again later.</span>';
-        setTimeout(resetForm.bind({btn: btn, heart:heart}), 3500);
-        return false;
-    }
-    const payload = { email, token };
-    console.log('Subscribe:', email);
-    fetch(form.action, {
-        method: form.method,
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        },
-        body: JSON.stringify(payload)
-        })
-        .then(response => response.json())
-        .then(data => {
-        if (data.status === 'success') {
-            btn.disabled = true; btn.innerHTML = '<span style="color: lime;">Thanks!</span>';
-            heart.classList.add("beat"); //happy:D
-            setTimeout(resetForm.bind({btn: btn, heart:heart}), 3500);
-            form.reset();
-        } else {
-            if (data.error == "Email already subscribed") {
-                btn.disabled = true; btn.innerHTML = '<span style="color: green;">Already in list!</span>';
-            } else {
-                btn.disabled = true; btn.innerHTML = '<span style="color: red;">Oops! Try again later.</span>';
-            }
-            setTimeout(resetForm.bind({btn: btn, heart:heart}), 3500);
-            console.error("Submission result error:", data.error);
+
+    // Configure Marked.js for GitHub Flavored Markdown and code highlighting
+    marked.setOptions({
+        gfm: true,
+        breaks: true,
+        highlight: function (code, lang) {
+        const language = hljs.getLanguage(lang) ? lang : 'plaintext';
+        return hljs.highlight(code, { language }).value;
         }
-        })
-        .catch(error => {
-            btn.disabled = true; btn.innerHTML = '<span style="color: red;">Network error. Please wait try again.</span>';
-            setTimeout(resetForm.bind({btn: btn, heart:heart}), 3500);
-            console.error("Submission error:", error);
-        });
-    return false;
-}
+    });
+
+    // Define the file paths to try based on your priority
+    const endpoints = [
+        `/blog/src/${path}.md`,
+        `/blog/src/${path}/post.md`
+    ];
+
+    let markdownContent = null;
+
+    // Try fetching the endpoints sequentially
+    for (const url of endpoints) {
+        try {
+        const response = await fetch(url);
+        if (response.ok) {
+            markdownContent = await response.text();
+            break; 
+        }
+        } catch (error) {
+        console.warn(`Failed to load ${url}`);
+        }
+    }
+
+    // Render the result
+    if (markdownContent) {
+        container.innerHTML = marked.parse(markdownContent);
+        
+        // Optional: Dynamically update the document <title> based on the first <h1> in the markdown
+        const firstHeading = container.querySelector('h1');
+        if (firstHeading) {
+        document.title = firstHeading.textContent;
+        }
+    } else {
+        // Fallback if neither markdown file exists
+        container.innerHTML = '<h1 class="mb-3">404 - Not Found</h1><p class="lead mb-4">The post you are looking for does not exist.</p>';
+        document.title = "404 Not Found";
+    }
+});
